@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="description" content="Retro pixel-art budget tracker">
+    <title>PixelVault - Budget Tracker</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="assets/favicon.svg" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="pixel-logo">PIXELVAULT</div>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+            <div class="loading-text">LOADING...</div>
+        </div>
+    </div>
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="screen hidden">
+        <div class="login-container">
+            <h1 class="game-title">PIXELVAULT</h1>
+            <p class="subtitle">BUDGET QUEST</p>
+            <div class="login-box pixel-border">
+                <div id="login-form">
+                    <div class="input-group">
+                        <label>USERNAME</label>
+                        <input type="text" id="username" class="pixel-input" maxlength="20">
+                    </div>
+                    <div class="input-group">
+                        <label>PASSWORD</label>
+                        <input type="password" id="password" class="pixel-input" maxlength="30">
+                    </div>
+                    <div class="button-group">
+                        <button id="btn-login" class="pixel-btn primary">LOGIN</button>
+                        <button id="btn-register" class="pixel-btn">REGISTER</button>
+                    </div>
+                    <p id="login-error" class="error-text hidden"></p>
+                </div>
+            </div>
+            <p class="credits">INSERT COIN TO START</p>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="app-screen" class="screen hidden">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <span class="app-name">PIXELVAULT</span>
+            </div>
+            <div class="top-bar-right">
+                <span id="current-date" class="date-display"></span>
+                <span id="user-display" class="user-badge"></span>
+                <button id="btn-logout" class="pixel-btn-small">LOGOUT</button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <button class="nav-btn active" data-view="dashboard">
+                <span class="nav-icon">&#9733;</span>
+                <span class="nav-text">DASHBOARD</span>
+            </button>
+            <button class="nav-btn" data-view="accounts">
+                <span class="nav-icon">&#9878;</span>
+                <span class="nav-text">ACCOUNTS</span>
+            </button>
+            <button class="nav-btn" data-view="transactions">
+                <span class="nav-icon">&#8644;</span>
+                <span class="nav-text">TRANSACTIONS</span>
+            </button>
+            <button class="nav-btn" data-view="debts">
+                <span class="nav-icon">&#9888;</span>
+                <span class="nav-text">DEBTS</span>
+            </button>
+            <button class="nav-btn" data-view="recurring">
+                <span class="nav-icon">&#8635;</span>
+                <span class="nav-text">RECURRING</span>
+            </button>
+            <button class="nav-btn" data-view="forecast">
+                <span class="nav-icon">&#9729;</span>
+                <span class="nav-text">FORECAST</span>
+            </button>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main id="main-content" class="main-content">
+            <!-- Views loaded dynamically -->
+        </main>
+    </div>
+
+    <!-- Modal Container -->
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div id="modal-content" class="modal-content pixel-border">
+            <!-- Modal content loaded dynamically -->
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Audio Elements -->
+    <audio id="sfx-click" preload="auto"></audio>
+    <audio id="sfx-success" preload="auto"></audio>
+    <audio id="sfx-error" preload="auto"></audio>
+    <audio id="sfx-coin" preload="auto"></audio>
+
+    <!-- Scripts -->
+    <script src="js/db.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/amortization.js"></script>
+    <script src="js/predictions.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/views.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+

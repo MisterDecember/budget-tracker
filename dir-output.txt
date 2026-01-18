@@ -1,0 +1,10 @@
+﻿
+
+    Directory: G:\budget-tracker
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----         1/18/2026  11:55 AM              0 dir-output.txt                                                       
+
+
