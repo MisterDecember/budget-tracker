@@ -1,0 +1,227 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Horizon - Breaking Dawn Theme */
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 15%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 13%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 187 100% 42%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 215 25% 27%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 25% 27%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 343 81% 49%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 25% 27%;
+    --input: 215 25% 22%;
+    --ring: 187 100% 42%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-horizon-void text-foreground font-sans antialiased;
+    background-image: radial-gradient(ellipse at top center, rgba(30, 41, 59, 0.5) 0%, transparent 50%);
+  }
+}
+
+@layer components {
+  /* Glassmorphism Panels */
+  .glass {
+    @apply relative bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] shadow-glass;
+  }
+  
+  .glass::before {
+    content: '';
+    @apply absolute inset-0 rounded-[inherit] pointer-events-none;
+    background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 50%);
+  }
+  
+  .glass-subtle {
+    @apply relative bg-white/[0.02] backdrop-blur-md border border-white/[0.05];
+  }
+  
+  .glass-card {
+    @apply relative bg-horizon-surface/50 backdrop-blur-xl border border-white/[0.06] shadow-glass rounded-xl overflow-hidden;
+  }
+  
+  .glass-card::before {
+    content: '';
+    @apply absolute inset-0 rounded-[inherit] pointer-events-none;
+    background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 30%);
+  }
+  
+  /* Dawn Gradient Accents */
+  .dawn-glow {
+    @apply bg-dawn-gradient bg-clip-text text-transparent;
+  }
+  
+  .dawn-border {
+    position: relative;
+  }
+  
+  .dawn-border::before {
+    content: '';
+    @apply absolute -inset-[1px] rounded-[inherit] pointer-events-none;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.5) 0%, rgba(236, 72, 153, 0.5) 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 1px;
+  }
+  
+  /* The Horizon Line */
+  .horizon-line {
+    @apply relative w-full h-[2px];
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(245, 158, 11, 0.3) 20%, 
+      rgba(245, 158, 11, 0.8) 50%, 
+      rgba(236, 72, 153, 0.8) 80%, 
+      transparent 100%
+    );
+  }
+  
+  .horizon-line::before {
+    content: '';
+    @apply absolute inset-0;
+    background: inherit;
+    filter: blur(8px);
+    opacity: 0.6;
+  }
+  
+  /* Stat Cards */
+  .stat-card {
+    @apply glass-card p-5 transition-all duration-300 hover:scale-[1.02] hover:shadow-glass-lg;
+  }
+  
+  .stat-card.positive {
+    @apply border-l-2 border-l-positive;
+  }
+  
+  .stat-card.negative {
+    @apply border-l-2 border-l-negative;
+  }
+  
+  .stat-card.info {
+    @apply border-l-2 border-l-earth-cyan;
+  }
+  
+  /* Navigation */
+  .nav-item {
+    @apply relative flex flex-col items-center gap-1 px-4 py-3 text-muted-foreground transition-all duration-200;
+  }
+  
+  .nav-item:hover {
+    @apply text-foreground;
+  }
+  
+  .nav-item.active {
+    @apply text-earth-cyan;
+  }
+  
+  .nav-item.active::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-0.5 rounded-full;
+    background: linear-gradient(90deg, #06B6D4 0%, #14B8A6 100%);
+  }
+  
+  /* Buttons with glow */
+  .btn-primary {
+    @apply relative bg-earth-cyan text-horizon-void font-medium px-4 py-2 rounded-lg transition-all duration-200;
+    @apply hover:shadow-glow-cyan hover:scale-[1.02];
+  }
+  
+  .btn-dawn {
+    @apply relative bg-dawn-gradient text-horizon-void font-medium px-4 py-2 rounded-lg transition-all duration-200;
+    @apply hover:shadow-glow-amber hover:scale-[1.02];
+  }
+  
+  /* Form inputs */
+  .input-glass {
+    @apply bg-white/[0.03] border-white/[0.08] backdrop-blur-sm rounded-lg px-4 py-2;
+    @apply focus:border-earth-cyan/50 focus:ring-1 focus:ring-earth-cyan/20 transition-all duration-200;
+  }
+  
+  /* Progress bars */
+  .progress-dawn {
+    @apply bg-horizon-surface rounded-full overflow-hidden;
+  }
+  
+  .progress-dawn .indicator {
+    @apply bg-dawn-gradient h-full rounded-full transition-all duration-500;
+  }
+  
+  /* Charts */
+  .chart-tooltip {
+    @apply glass-card text-sm p-3 !border-white/10;
+  }
+  
+  /* Shimmer effect for loading */
+  .shimmer {
+    @apply relative overflow-hidden;
+  }
+  
+  .shimmer::after {
+    content: '';
+    @apply absolute inset-0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+  
+  /* Text utilities */
+  .text-gradient-dawn {
+    @apply bg-gradient-to-r from-dawn-amber via-dawn-orange to-dawn-pink bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-earth {
+    @apply bg-gradient-to-r from-earth-cyan to-earth-teal bg-clip-text text-transparent;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+}
+
+/* Number inputs without spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Selection */
+::selection {
+  @apply bg-earth-cyan/30 text-foreground;
+}

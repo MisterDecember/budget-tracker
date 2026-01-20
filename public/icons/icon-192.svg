@@ -1,0 +1,20 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="sunGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="60%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+  <!-- Rising sun/planet (semi-circle) -->
+  <path d="M32 36 C32 24.954 24.046 16 14 16 C14 16 14 36 14 36 L50 36 C50 36 50 16 50 16 C39.954 16 32 24.954 32 36Z" fill="url(#sunGradient)" opacity="0.9"/>
+  <circle cx="32" cy="36" r="14" fill="url(#sunGradient)"/>
+  <!-- Horizon line that becomes upward trend -->
+  <path d="M4 40 L40 40 L48 32 L56 28 L60 24" stroke="url(#lineGradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Glow effect -->
+  <ellipse cx="32" cy="40" rx="24" ry="4" fill="url(#sunGradient)" opacity="0.15"/>
+</svg>

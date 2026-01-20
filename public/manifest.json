@@ -1,0 +1,59 @@
+﻿{
+    "name":  "Horizon - Budget Tracker",
+    "short_name":  "Horizon",
+    "description":  "Your wealth, forecasted. See further.",
+    "start_url":  "/",
+    "display":  "standalone",
+    "background_color":  "#0a0a0f",
+    "theme_color":  "#0F172A",
+    "orientation":  "portrait-primary",
+    "icons":  [
+                  {
+                      "purpose":  "any",
+                      "type":  "image/svg+xml",
+                      "sizes":  "any",
+                      "src":  "/horizon.svg"
+                  },
+                  {
+                      "purpose":  "any maskable",
+                      "type":  "image/svg+xml",
+                      "sizes":  "192x192",
+                      "src":  "/icons/icon-192.svg"
+                  },
+                  {
+                      "purpose":  "any maskable",
+                      "type":  "image/svg+xml",
+                      "sizes":  "512x512",
+                      "src":  "/icons/icon-512.svg"
+                  }
+              ],
+    "categories":  [
+                       "finance",
+                       "productivity"
+                   ],
+    "screenshots":  [
+
+                    ],
+    "shortcuts":  [
+                      {
+                          "name":  "Dashboard",
+                          "url":  "/",
+                          "icons":  [
+                                        {
+                                            "src":  "/icons/icon-192.png",
+                                            "sizes":  "192x192"
+                                        }
+                                    ]
+                      },
+                      {
+                          "name":  "Add Transaction",
+                          "url":  "/transactions",
+                          "icons":  [
+                                        {
+                                            "src":  "/icons/icon-192.png",
+                                            "sizes":  "192x192"
+                                        }
+                                    ]
+                      }
+                  ]
+}
